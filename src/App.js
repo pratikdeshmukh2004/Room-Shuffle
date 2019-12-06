@@ -17,19 +17,21 @@ export class App extends React.Component {
 }
 
   onSearch=(e)=>{
-    var name = e.target.value;
-    if (name.length>2){
-      name=name.slice(0,1).toUpperCase()+name.slice(1)
-      console.log(name);
+  //   var name = e.target.value;
+  //   if (name.length>2){
+  //     name=name.slice(0,1).toUpperCase()+name.slice(1)
+  //     console.log(name);
       
-      for (var i of this.state.data){
-        if (i.Data.includes(name)){
-          this.setState({
-            roomnumber:i.Room
-          })
-        }
-      }
-    }
+  //     for (var i of this.state.data){
+  //       if (i.Data.includes(name)){
+  //         this.setState({
+  //           roomnumber:i.Room
+  //         })
+  //       }
+  //     }
+  //   }
+  alert("This Feature is on devlopment mode.")
+
   }
   onRoomSearch=()=>{
     console.log(this.state.roomnumber)

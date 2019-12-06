@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
-import { MDBContainer, MDBCard, MDBCardBody, MDBCardFooter, MDBTable, MDBTableBody, MDBTableHead, MDBCardHeader, MDBBtn } from 'mdbreact'
+import { MDBFooter,MDBContainer, MDBCard, MDBCardBody, MDBCardFooter, MDBTable, MDBTableBody, MDBTableHead, MDBCardHeader, MDBBtn } from 'mdbreact'
 export class Rooms extends Component {
     state = {
         data: [
@@ -22,8 +22,9 @@ export class Rooms extends Component {
             <div>
                 {this.state.data.map((item) => {
                     return (
+                        <div id={"room"+item.Room}>
                         <MDBContainer>
-                            <MDBCard style={{ width: "100%", marginTop: "3rem" }} className="text-center">
+                            <MDBCard style={{ width: "100%", marginTop: "5rem" }} className="text-center">
                                 <MDBCardHeader color="success-color"><b>Room No.{item.Room}</b></MDBCardHeader>
                                 <MDBCardBody>
                                     <Table striped bordered hover variant="dark">
@@ -49,10 +50,18 @@ export class Rooms extends Component {
                                 <MDBCardFooter color="success-color">{item.Data.length} Peoples.</MDBCardFooter>
                             </MDBCard>
                         </MDBContainer>
+                        </div>
                     )
 
                 })
                 }
+                 <MDBFooter className="danger-color font-small pt-2 mt-4">
+              <div className="footer-copyright text-center py-3">
+                  <MDBContainer fluid>
+                  &copy; {new Date().getFullYear()} Created By: <a href="#pratik"> Pratik Deshmukh and Satyam Chauhan <b className="green-text">rooms.navgurukul.cf</b></a>
+                  </MDBContainer>
+              </div>
+              </MDBFooter>
             </div>
         )
     }
